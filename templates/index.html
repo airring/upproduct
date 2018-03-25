@@ -1,0 +1,151 @@
+{% extends 'default.html' %}
+
+{% block file %}
+<div class="col-lg-12">
+                <div class="ibox float-e-margins">
+
+
+
+
+                                <SCRIPT LANGUAGE="JavaScript">
+                                                            function ck(b)
+                                                            {
+                                                                var input = document.getElementsByTagName("input");
+                                                                for (var i=0;i<input.length ;i++ )
+                                                                {
+                                                                    if(input[i].type=="checkbox")
+                                                                        input[i].checked = b;
+                                                                }
+                                                            }
+                                                            </SCRIPT>
+                                <form action="build.html" method="post">
+
+                                    <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>上线备注(必填)</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="close-link">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul class="todo-list m-t small-list">
+
+                                        <input type="text" name="note" class="form-control">
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <SCRIPT LANGUAGE="JavaScript">
+                                                            function ck(b)
+                                                            {
+                                                                var input = document.getElementsByTagName("input");
+                                                                for (var i=0;i<input.length ;i++ )
+                                                                {
+                                                                    if(input[i].type=="checkbox")
+                                                                        input[i].checked = b;
+                                                                }
+                                                            }
+                                                            </SCRIPT>
+                                    <td><input class="btn btn-white" type="button" onclick="ck(true)" value="全选"><input class="btn btn-white" type="button" onclick="ck(false)" value="取消全选"></td>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>基础项目编译</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="close-link">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul class="todo-list m-t small-list">
+                                            {% for service in baseserver %}
+                                                <li>
+                                                    <label class="my_protocol">
+                                                    <input class="input_agreement_protocol" name="service_choice" type="checkbox" value="{{ service }}" />
+                                                    <span class="m-l-xs" >{{ service }}</span>
+                                                    </label>
+                                                </li>
+
+                                {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>war包项目编译</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="close-link">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul class="todo-list m-t small-list">
+                                            {% for service in services %}
+                                                <li>
+                                                    <label class="my_protocol">
+                                                    <input class="input_agreement_protocol" name="service_choice" type="checkbox" value="{{ service }}" />
+                                                    <span class="m-l-xs" >{{ service }}</span><span class="label label-warning pull-right">war包项目</span>
+                                                    <td class=""></td>
+
+                                                    </label>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>jar包项目编译</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="close-link">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul class="todo-list m-t small-list">
+                                            {% for service in jarserver %}
+                                                <li>
+                                                    <label class="my_protocol">
+                                                    <input class="input_agreement_protocol" name="service_choice" type="checkbox" value="{{ service }}" />
+                                                    <span class="m-l-xs" >{{ service }}</span>
+                                                    </label>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                                <td><input type="submit" class="btn btn-sm btn-primary" value="build"></td>
+{#                                            <tr>#}
+{#                                                <td><small>Pending...</small></td>#}
+{#                                                <td><i class="fa fa-clock-o"></i> 11:20pm</td>#}
+{#                                                <td>Samantha</td>#}
+{#                                                <td class="text-navy"> <i class="fa fa-level-up"></i> 24% </td>#}
+{#                                            </tr>#}
+                                            </form>
+
+
+                                </div>
+                            </div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'default.html' %}
+{% block file %}
+{#    <form action="service.html" method="post">#}
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">远程主机认证信息</h3>
+                </div>
+
+            <form class="m-t" role="form" action="service.html" method="post">
+                <div class="modal-body">
+
+                    <div class="form-horizontal">
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="auth-sys-type"><strong>操作系统：</strong></label>
+                            <div class="col-sm-6">
+                                <select id="auth-sys-type" class="form-control" name="add_system">
+                                    <option value='Linux'>Linux</option>
+                                    <option value='Windows'>Windows</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="auth-host-ip" class="col-sm-3 control-label"><strong>IP 地址：</strong></label>
+                            <div class="col-sm-6">
+                                <input id="auth-host-ip" type="text" class="form-control" name="add_ipadd" placeholder="远程主机的IP地址或域名"/>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="auth-host-desc" class="col-sm-3 control-label"><strong>简要描述：</strong></label>
+                            <div class="col-sm-6">
+                                <input id="auth-host-desc" type="text" class="form-control" name="add_list" placeholder="对此远程主机的简要描述，可以忽略不填。"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="dlg-edit-host-group"><strong>主机分组：</strong></label>
+                            <div class="col-sm-6">
+                                <select id="dlg-edit-host-group" class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <hr class="small"/>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="auth-sys-type"><strong>访问协议：</strong></label>
+                            <div class="col-sm-6">
+                                <select id="host-protocol-type" class="form-control">
+                                    <option value=1>SSH</option>
+                                    <option value=2>RDP</option>
+                                    <option value=3>TELNET</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-3 control-label" for="auth-sys-type"><strong>协议端口：</strong></label>
+                                         <div class="col-sm-6">
+                                <input id="dlg-edit-host-protocol-port" type="text" class="form-control" name="add_port" value="22">
+                            </div>
+                        </div>
+
+                        <hr class="small"/>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+{#                    <button type="button" class="btn btn-sm btn-primary" id="host-btn-save"><i class="fa fa-check fa-fw"></i> 保存主机信息</button>#}
+{#                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><i class="fa fa-close fa-fw"></i> 取消</button>#}
+
+                    <input type="submit" class="btn btn-sm btn-primary" id="host-btn-save" value="保存主机信息">
+                    <input type="submit" class="btn btn-sm btn-default" data-dismiss="modal" value="取消">
+                </div>
+             </form>
+
+
+            </div>
+        </div>
+
+{% endblock %}

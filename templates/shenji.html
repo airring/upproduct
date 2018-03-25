@@ -1,0 +1,22 @@
+{% extends 'default.html' %}
+{% block file %}
+
+
+
+    <div class="col-lg-12">
+    {% for build_static in static %}
+        <h1>{{ build_static.build_static }}</h1>
+        <h3 class="font-bold">{{ build_static.update_file }}</h3>
+        <h3 class="font-bold">{{ build_static.error_log }}</h3>
+    {% endfor %}
+        <div class="error-desc">
+            <a href="index.html" class="btn btn-primary m-t">返回</a>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="/static/js/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+
+{% endblock %}
