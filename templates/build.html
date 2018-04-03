@@ -30,7 +30,7 @@
                                     <th data-hide="phone" class="footable-visible footable-sortable">申请提交时间<span class="footable-sort-indicator"></span></th>
                                     <th data-hide="phone,tablet" class="footable-visible footable-sortable">上线时间<span class="footable-sort-indicator"></span></th>
                                     <th data-hide="phone" class="footable-visible footable-sortable">Status<span class="footable-sort-indicator"></span></th>
-                                    <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">Action</th>
+                                    <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">上线备注</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,11 +52,11 @@
                                         {{ db_log.uppro }}
                                     </td>
                                     <td class="footable-visible">
-                                        <span class="label label-primary">{{ db_log.status }}</span>
+                                        <span class="label {{ db_log.class_status }}">{{ db_log.status }}</span>
                                     </td>
                                     <td class="text-right footable-visible footable-last-column">
                                         <div class="btn-group">
-                                            预发布
+                                            {{ db_log.note }}
                                         </div>
                                     </td>
                                 </tr>

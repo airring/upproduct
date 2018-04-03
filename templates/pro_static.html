@@ -13,12 +13,13 @@
                                 <tr>
 
                                     <th data-toggle="true" class="footable-visible footable-first-column footable-sortable">Product Name<span class="footable-sort-indicator"></span></th>
-                                    <th data-hide="phone" class="footable-visible footable-sortable">username<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">发布评审人<span class="footable-sort-indicator"></span></th>
                                     <th data-hide="all" class="footable-sortable" style="display: none;">Description<span class="footable-sort-indicator"></span></th>
-                                    <th data-hide="phone" class="footable-visible footable-sortable">申请提交时间<span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone" class="footable-visible footable-sortable">最近更新时间<span class="footable-sort-indicator"></span></th>
                                     <th data-hide="phone,tablet" class="footable-visible footable-sortable">上线时间<span class="footable-sort-indicator"></span></th>
                                     <th data-hide="phone" class="footable-visible footable-sortable">Status<span class="footable-sort-indicator"></span></th>
-                                    <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">Action</th>
+                                    <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">上线备注</th>
+                                    <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">预发布编译次数</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -28,7 +29,7 @@
 
                                     </td>
                                     <td class="footable-visible">
-                                        {{ db_log.username }}
+                                        {{ db_log.username }}/{{ db_log.sj_username }}/{{ db_log.up_username }}
                                     </td>
                                     <td style="display: none;">
                                         {{ db_log.note }}
@@ -44,7 +45,12 @@
                                     </td>
                                     <td class="text-right footable-visible footable-last-column">
                                         <div class="btn-group">
-                                            预发布
+                                            {{ db_log.note }}
+                                        </div>
+                                    </td>
+                                    <td class="text-right footable-visible footable-last-column">
+                                        <div class="btn-group">
+                                            {{ db_log.uptimes }}
                                         </div>
                                     </td>
                                 </tr>

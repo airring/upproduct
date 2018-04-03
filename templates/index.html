@@ -2,6 +2,15 @@
 
 {% block file %}
 <div class="col-lg-12">
+<script type="text/javascript">
+    function check(){
+        var username = document.getElementById('note').value;
+        if(username == ''){
+            document.getElementById('tip').innerHTML = "备注不能为空";
+            return;
+        }
+    }
+</script>
                 <div class="ibox float-e-margins">
 
 
@@ -18,7 +27,7 @@
                                                                 }
                                                             }
                                                             </SCRIPT>
-                                <form action="build.html" method="post">
+                                <form action="devshenji.html" method="post">
 
                                     <div class="ibox float-e-margins">
                                     <div class="ibox-title">
@@ -135,7 +144,57 @@
                                     </div>
                                 </div>
 
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>带分支名项目</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="close-link">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul class="todo-list m-t small-list">
+                                            {% for service in branchserver %}
+                                                <li>
+                                                    <label class="my_protocol">
+                                                    <input class="input_agreement_protocol" name="service_choice" type="checkbox" value="{{ service }}" />
+                                                    <span class="m-l-xs" >{{ service }}</span><input type="text" name="{{ service }}" class="form-control">
+                                                    </label>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
 
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>生产直通项目</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="close-link">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <ul class="todo-list m-t small-list">
+                                            {% for service in upproservice %}
+                                                <li>
+                                                    <label class="my_protocol">
+                                                    <input class="input_agreement_protocol" name="service_choice" type="checkbox" value="{{ service }}" />
+                                                    <span class="m-l-xs" >{{ service }}</span>
+                                                    </label>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
                                                 <td><input type="submit" class="btn btn-sm btn-primary" value="build"></td>
 {#                                            <tr>#}
 {#                                                <td><small>Pending...</small></td>#}
