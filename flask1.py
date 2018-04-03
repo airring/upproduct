@@ -66,18 +66,6 @@ class t_log(db.Model):
 
 db.create_all()
 
-# add_user=t_user(username='xuexy',password='GJi32ycsakad',group_id='3')
-# add_user2=t_user(username='wangcb',password='Ud66sydudatTrdir72',group_id='2')
-# add_user3=t_user(username='zhaoyexin',password='Ojo3gwLSliWwrlnrKm5F',group_id='2')
-# add_user4=t_user(username='zhangcheng',password='7CGSUDFGc5PT3RDEZ09J',group_id='2')
-# add_user5=t_user(username='yangcy',password='yangcyU81uehdyyy1o5',group_id='2')
-# db.session.add(add_user)
-# db.session.add(add_user5)
-# db.session.add(add_user2)
-# db.session.add(add_user3)
-# db.session.add(add_user4)
-# db.session.commit()
-#add_t_log=t_log(user_id=session['user_id'],pro_name=,note=,update_time=,static=)
 
 def build_static():
 	for i in request.form.getlist('service_choies'):
