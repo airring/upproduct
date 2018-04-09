@@ -161,8 +161,13 @@
                                             {% for service in branchserver %}
                                                 <li>
                                                     <label class="my_protocol">
-                                                    <input class="input_agreement_protocol" name="service_choice" type="checkbox" value="{{ service }}" />
-                                                    <span class="m-l-xs" >{{ service }}</span><input type="text" name="{{ service }}" class="form-control">
+                                                        <input class="input_agreement_protocol" name="service_choice"  type="checkbox" value="{{ service }}" />
+                                                        <span class="m-l-xs" >{{ service }}</span>
+                                                        {% if service == "rrjc" %}
+                                                            <input type="text" name="{{ service }}" placeholder="请输入da或者xiao" class="form-control">
+                                                        {% else %}
+                                                            <input type="text" name="{{ service }}" placeholder="请输入分支名" class="form-control">
+                                                        {% endif %}
                                                     </label>
                                                 </li>
                                             {% endfor %}
